@@ -142,29 +142,36 @@ Array.prototype.orderByDescending = function(callback = e => e) {
 }
 
 Array.prototype.count = function() {
+
     return this.length;
 }
 
 Array.prototype.skip = function(n) {
+
     if (typeof (n) !== "number") {
         throw new Error(`Expected a number, got a ${typeof(n)}`);
     }
+
     let out = [];
     for(let i = n; i < this.length; i ++) {
         let e = this[i];
         out.push(e);
     }
+
     return out;
 }
 
 Array.prototype.take = function(n) {
+
     if (typeof (n) !== "number") {
         throw new Error(`Expected a number, got a ${typeof (n)}`);
     }
+
     let out = [];
     for(let i = 0; i < n; i ++) {
         let e = this[i];
         out.push(e);
     }
+    
     return out;
 }
